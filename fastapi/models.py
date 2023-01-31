@@ -1,11 +1,11 @@
 import tensorflow as tf
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.utils import load_img
+from tensorflow.keras.utils import img_to_array
 
 import torch
 from torchvision import transforms
 from torchvision import models
-from torch import nn
+from torch import nn    
 
 import io
 from PIL import Image

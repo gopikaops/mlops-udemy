@@ -15,7 +15,7 @@ def image_transformation(imagepath):
     imagetensor = test_transforms(image)
     return imagetensor
 
-checkpoint = torch.load("../catvdog.pt", map_location=torch.device('cpu'))
+checkpoint = torch.load("catvdog.pt", map_location=torch.device('cpu'))
 model = models.densenet121(pretrained=False)
 model.classifier = nn.Sequential(nn.Linear(1024, 512),
                                  nn.ReLU(),
@@ -29,9 +29,9 @@ model.parameters = checkpoint['parameters']
 model.load_state_dict(checkpoint['state_dict'])
 model.eval()
 
-graham_img_path = "../graham2.jpg"
-bronte_img_path = "../bronte.jpg"
-paisley_img_path = "../paisley.jpg"
+graham_img_path = "graham2.jpg"
+bronte_img_path = "bronte.jpg"
+paisley_img_path = "paisley.jpg"
 
 image = image_transformation(paisley_img_path)
 image1 = image[None, :, :, :]

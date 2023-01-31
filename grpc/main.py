@@ -1,6 +1,6 @@
 import grpc
-import protos.cats_vs_dogs_pb2 as cats_vs_dogs_pb2
 import protos.cats_vs_dogs_pb2_grpc as cats_vs_dogs_pb2_grpc
+import protos.cats_vs_dogs_pb2 as cats_vs_dogs_pb2
 from concurrent import futures
 import logging
 from models import Models

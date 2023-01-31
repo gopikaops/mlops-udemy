@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from . import cats_vs_dogs_pb2 as cats__vs__dogs__pb2
+import protos.cats_vs_dogs_pb2 as cats__vs__dogs__pb2
 
 
 class CatsVsDogsServiceStub(object):

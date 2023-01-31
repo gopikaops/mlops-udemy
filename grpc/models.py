@@ -1,6 +1,6 @@
 import tensorflow as tf
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.utils import load_img
+from tensorflow.keras.utils import img_to_array
 
 import torch
 from torchvision import transforms
@@ -15,7 +15,7 @@ import os
 class Models():
     def __init__(self) -> None:
         self.tf_model = tf.keras.models.load_model(os.path.join("..", "final_model"))
-        checkpoint = torch.load(os.path.join("..", "catvdog.pt"), map_location=torch.device('cpu'))
+        checkpoint = torch.load(os.path.join("catvdog.pt"), map_location=torch.device('cpu'))
         self.pytorch_model = models.densenet121(pretrained=False)
         self.pytorch_model.classifier = nn.Sequential(nn.Linear(1024, 512),
                                         nn.ReLU(),

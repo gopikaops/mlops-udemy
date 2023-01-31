@@ -1,7 +1,7 @@
 from numpy.lib.npyio import load
 import tensorflow as tf
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.utils import load_img
+from tensorflow.keras.utils import img_to_array
 import os
 
 def load_image(filename):
@@ -23,7 +23,7 @@ def load_image(filename):
 # load the model
 model = tf.keras.models.load_model(os.path.join("..", "final_model"))
 
-img = load_image("../bronte.jpg")
+img = load_image("bronte.jpg")
 prediction = model.predict(img)
 
 if prediction[0][0] > 0.5: # 0 to 0.5 is cat and 0.5 to 1 is dog

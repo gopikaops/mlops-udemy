@@ -2,8 +2,8 @@ import grpc
 import protos.cats_vs_dogs_pb2 as cats_vs_dogs_pb2
 import protos.cats_vs_dogs_pb2_grpc as cats_vs_dogs_pb2_grpc
 
-graham_img = "../graham2.jpg"
-channel = grpc.insecure_channel("34.66.95.61:50000")
+graham_img = "graham2.jpg"
+channel = grpc.insecure_channel("localhost:50000")
 client = cats_vs_dogs_pb2_grpc.CatsVsDogsServiceStub(channel)
 
 with open(graham_img, 'rb') as img_file:
